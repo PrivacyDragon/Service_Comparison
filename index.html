@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat services</title>
+     <link rel="shortcut icon" type="image/jpg" href="faviconpriv.jpg"/>
+     <meta name="robots" content="nofollow, noarchive, notranslate" />
+     <!--^ I've no idea if this will work...-->
+	 <meta charset="utf-8"/>
+     <style>
+		html {
+		overflow-y: scroll;
+		Scrollbar-color : black grey;
+		scrollbar-width: thin;
+		}
+		
+		a:active {
+		background-color: darkred;}
+    
+		.header {
+		font-size: 40px;
+		text-decoration: underline;}
+    
+		ul {
+		font-size: 22px;
+		text-decoration: none;}
+    
+		h3 {
+		font-size: 29px;
+		text-decoration: none;}
+    
+		.inhoud {
+		font-size: 27.5px;
+		text-decoration: italic;}
+    
+		li {
+		font-size: 22px;}
+		
+		a {
+		color: green;}
+		
+		a:hover {
+		color: blueviolet;}
+		
+		button, .inputsubmit {
+		background-color: darkred;
+		color: white;
+		padding: 10px 30px;
+		border-radius: 17px;}
+		table {
+			border: 1px solid black;
+		}
+		th, td{
+			border: 1px solid black;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+    </style>
+    <!--Without style the page would be really plain and boring...-->
+  </head>
+  <body>
+	<center>
+	<button onclick="dark()" id="modetoggle">Dark mode</button>
+	<h1 class="header">Service comparison</h1>
+	<h2>Chat services</h2>
+	<table>
+	  <thead>
+	  <tr>
+		<th>Name</th>
+		<th>Phone number required</th>
+		<th>encrypted</th>
+		<th>cost</th>
+		<th>uptime</th>
+		<th>centralized/decentralized/peer-to-peer</th>
+		<th>Data usage</th>
+		<th>Country of jurisdiction</th>
+		<th>Easy to find others</th>
+		<th>Platform support</th>
+	  </tr>
+	  </thead>
+	  <tbody>
+	  <tr>
+		<td>Briar</td>
+		<td style="background-color:green;color:white;">No</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:green;color:white;">Free</td>
+		<td style="background-color:yellow;color:black;">N/A</td>
+		<td style="background-color:green;color:white;">Peer-to-peer</td>
+		<td style="background-color:yellow;color:black;">A bit much</td>
+		<td style="background-color:green;color:white;">N/A</td>
+		<td style="background-color:red;color:white;">No</td>
+		<td style="background-color:red;color:white;">Android</td>
+	  </tr>
+	  <tr>
+		<td>Matrix/Element</td>
+		<td style="background-color:green;color:white;">No</td>
+		<td style="background-color:yellow;color:black;">Standard for direct messages</td>
+		<td style="background-color:green;color:white;">Free</td>
+		<td style="background-color:yellow;color:black;">Depends on the server</td>
+		<td style="background-color:green;color:white;">Decentralized</td>
+		<td style="background-color:green;color:white;">Not much</td>
+		<td style="background-color:green;color:white;">Depends on the server</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:green;color:white;">Android, iOS, Windows, MacOS, Linux, 3DS, Web, Commandline</td>
+	  </tr>
+	  <tr>
+		<td>Signal¹</td>
+		<td style="background-color:red;color:white;">Yes</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:green;color:white;">Free</td>
+		<td style="background-color:green;color:white;">99%</td>
+		<td style="background-color:red;color:white;">Centralized</td>
+		<td style="background-color:green;color:white;">Not really much</td>
+		<td style="background-color:red;color:white;">United States of America</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:yellow;color:black;">Android, iOS, Windows², MacOS², Linux²</td>
+	  <tr>
+		<td>Threema</td>
+		<td style="background-color:green;color:white;">No</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:red;color:white;">CHF 3.99</td>
+		<td style="background-color:green;color:white;">99%</td>
+		<td style="background-color:red;color:white;">Centralized</td>
+		<td style="background-color:green;color:white;">Not much</td>
+		<td style="background-color:green;color:white;">Switzerland</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:yellow;color:black;">Android, iOS, Web³</td>
+	  </tr>
+	  <tr>
+		<td>Tox</td>
+		<td style="background-color:green;color:white;">No</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:green;color:white;">Free</td>
+		<td style="background-color:yellow;color:black;">N/A⁴</td>
+		<td style="background-color:green;color:white;">Peer-to-peer</td>
+		<td style="background-color:red;color:white;">Very much</td>
+		<td style="background-color:green;color:white;">N/A</td>
+		<td style="background-color:red;color:white;">No</td>
+		<td style="background-color:yellow;color:black;">Android, Windows, MacOS, Linux, FreeBSD, Commandline</td>
+	  </tr>
+	  </tbody>
+	</table>
+	<h4>Best options: 1. Matrix/Element - 2. Threema</h4>
+	<hr>
+	<h2>Email services</h2>
+	<table>
+	  <thead>
+	  <tr>
+		<th>Name</th>
+		<th>encryption possible to outsiders</th>
+		<th>cost</th>
+		<th>uptime</th>
+		<th>Country of jurisdiction</th>
+		<th>Platform support</th>
+		<th>Active on social media</th>
+	  </tr>
+	  </thead>
+	  <tbody>
+	  <tr>
+		<td>Mailbox.org</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:yellow;color:black;">Starting from €1,- monthly</td>
+		<td style="background-color:green;color:white;">99%</td>
+		<td style="background-color:green;color:white;">Germany</td>
+		<td style="background-color:red;color:white;">Web</td>
+		<td style="background-color:red;color:white;">As far as I could see not</td>
+	  </tr>
+	  <tr>
+		<td>Mailfence</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:green;color:white;">Free plan possible</td>
+		<td style="background-color:green;color:white;">99%</td>
+		<td style="background-color:green;color:white;">Belgium</td>
+		<td style="background-color:yellow;color:black;">Android, iOS, Web</td>
+		<td style="background-color:green;color:white;">Yes</td>
+	  </tr>
+	  <tr>
+		<td>Protonmail</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:green;color:white;">Free plan possible</td>
+		<td style="background-color:green;color:white;">99%</td>
+		<td style="background-color:green;color:white;">Switzerland</td>
+		<td style="background-color:yellow;color:black;">Android, iOS, Web</td>
+		<td style="background-color:yellow;color:black;">Only if they have something new</td>
+	  </tr>
+	  <tr>
+		<td>Tutanota</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:green;color:white;">Free plan possible</td>
+		<td style="background-color:green;color:white;">99%</td>
+		<td style="background-color:green;color:white;">Germany</td>
+		<td style="background-color:green;color:white;">Android, iOS, Windows, MacOS, Linux, Web</td>
+		<td style="background-color:green;color:white;">Yes</td>
+	  </tr>
+	  </tbody>
+	</table>
+	<h4>Best option: Tutanota</h4>
+	<hr>
+	<h2>Cloud storage services</h2>
+	<table>
+	  <thead>
+	  <tr>
+		<th>Name</th>
+		<th>encrypted</th>
+		<th>cost</th>
+		<th>Available storage</th>
+		<th>Sharing with others</th>
+		<th>uptime</th>
+		<th>centralized/decentralized</th>
+		<th>Country of jurisdiction</th>
+		<th>Platform support</th>
+		<th>Professional look</th>
+	  </tr>
+	  </thead>
+	  <tbody>
+	  <tr>
+		<td>Cryptpad</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:green;color:white;">Free</td>
+		<td style="background-color:yellow;color:black;">Depends on server</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:yellow;color:black;">Depends on server</td>
+		<td style="background-color:green;color:white;">Decentralized</td>
+		<td style="background-color:green;color:white;">Depends on server</td>
+		<td style="background-color:red;color:white;">Web</td>
+		<td style="background-color:yellow;color:black;">Not really</td>
+	  </tr>
+	  <tr>
+		<td>Tresorit</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:red;color:white;">€10,- monthly</td>
+		<td style="background-color:green;color:white;">500 GB</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:green;color:white;">99%</td>
+		<td style="background-color:red;color:white;">Centralized</td>
+		<td style="background-color:green;color:white;">Switzerland</td>
+		<td style="background-color:green;color:white;">Android, iOS, Windows, MacOS, Linux</td>
+		<td style="background-color:green;color:white;">Absolutely</td>
+	  </tr>
+	  <tr>
+		<td>Nextcloud</td>
+		<td style="background-color:green;color:white;">Yes</td>
+		<td style="background-color:green;color:white;">Free</td>
+		<td style="background-color:yellow;color:black;">Depends on server</td>
+		<td style="background-color:yellow;color:black;">Depends on server</td>
+		<td style="background-color:yellow;color:black;">Depends on server</td>
+		<td style="background-color:green;color:white;">Decentralized</td>
+		<td style="background-color:green;color:white;">Depends on server</td>
+		<td style="background-color:green;color:white;">Android, iOS, Windows, MacOS, Linux, Web</td>
+		<td style="background-color:yellow;color:black;">Not really</td>
+	  </tr>
+	  </tbody>
+	</table>
+	<h4>Best option: Nextcloud or Tresorit</h4>
+	<hr>
+	<p>Footnotes:<br>
+	¹ I do absolutely <em>not</em> recommend using Signal, but since it is well-known I still add it to the list of apps.<br>
+	² You need Signal on your phone in order to be able to use the desktop version.<br>
+	³ The webversion of Threema is like Whatsapp web, so it is <em>not</em> a standalone client.<br>
+	⁴ Tox is peer-to-peer, so there is no server. If you send a message to someone who is offline, Tox will try to send the message untill the person comes online. This is one of the things that gives Tox a high data usage.
+	<script type="text/javascript">
+		function light() {
+			document.body.style = "color: #000000 !important; background-color: #eff0f1 !important;";
+			document.getElementById('modetoggle').setAttribute('onclick', 'dark()');
+			document.getElementById('modetoggle').innerHTML = "dark mode";
+		}
+		function dark() {
+			document.body.style = "color: #ffffff !important; background-color: #232323 !important;";
+			document.getElementById('modetoggle').setAttribute('onclick', 'light()');
+			document.getElementById('modetoggle').innerHTML = 'light mode';
+		}
+	</script>
